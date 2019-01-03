@@ -1,11 +1,12 @@
-package olaf
+package main
 
 import (
     "fmt"
+    "github.com/btnguyen2k/olaf"
 )
 
 func main() {
-    o := NewOlaf(1981)
+    o := olaf.NewOlaf(1981)
 
     fmt.Println(o.Id128())
     fmt.Println(o.Id128Hex())
