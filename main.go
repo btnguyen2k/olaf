@@ -1,3 +1,4 @@
+// Just a demo program
 package main
 
 import (

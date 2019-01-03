@@ -1,3 +1,4 @@
+// Package olaf provides methods to generate unique ID using Twitter Snowflake algorithm.
 package olaf
 
 import (
