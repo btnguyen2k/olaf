@@ -20,6 +20,8 @@ import (
 // You may customize this to set a different epoch for your application.
 const Epoch int64 = 1546300800000
 
+const maxRadix = 36
+
 type Olaf struct {
     NodeID     int64 // original node-id
     nodeId64   int64 // node-id  for 64-bit ids
@@ -75,6 +77,26 @@ func WaitTillNextMillisec(currentMillisec int64) int64 {
     return nextMillisec
 }
 
+// ExtractTime64 extract "time" metadata from a 64-bit id.
+func (o *Olaf) ExtractTime64(id64 uint64) time.Time {
+    timestamp := id64>>ShiftTimestamp64 + uint64(o.Epoch)
+    sec := timestamp / 1000
+    nsec := (timestamp % 1000) * 1000000
+    return time.Unix(int64(sec), int64(nsec))
+}
+
+// ExtractTime64Hex extract "time" metadata from a 64-bit id.
+func (o *Olaf) ExtractTime64Hex(id64Hex string) time.Time {
+    id64, _ := strconv.ParseUint(id64Hex, 16, 64)
+    return o.ExtractTime64(id64)
+}
+
+// ExtractTime64Ascii extract "time" metadata from a 64-bit id.
+func (o *Olaf) ExtractTime64Ascii(id64Ascii string) time.Time {
+    id64, _ := strconv.ParseUint(id64Ascii, maxRadix, 64)
+    return o.ExtractTime64(id64)
+}
+
 // Id64 generates a 64-bit id.
 func (o *Olaf) Id64() uint64 {
     var lock sync.Mutex
@@ -111,7 +133,31 @@ func (o *Olaf) Id64Hex() string {
 
 // Id64Ascii generates a 128-bit id as an ascii string (base 36).
 func (o *Olaf) Id64Ascii() string {
-    return strconv.FormatUint(o.Id64(), 36)
+    return strconv.FormatUint(o.Id64(), maxRadix)
+}
+
+/*----------------------------------------------------------------------*/
+
+// ExtractTime128 extract "time" metadata from a 128-bit id.
+func (o *Olaf) ExtractTime128(id128 *big.Int) time.Time {
+    timestamp := id128.Rsh(id128, ShiftTimestamp128).Int64()
+    sec := timestamp / 1000
+    nsec := (timestamp % 1000) * 1000000
+    return time.Unix(sec, nsec)
+}
+
+// ExtractTime128Hex extract "time" metadata from a 128-bit id.
+func (o *Olaf) ExtractTime128Hex(id128Hex string) time.Time {
+    id128 := big.NewInt(0)
+    id128.SetString(id128Hex, 16)
+    return o.ExtractTime128(id128)
+}
+
+// ExtractTime128Ascii extract "time" metadata from a 128-bit id.
+func (o *Olaf) ExtractTime128Ascii(id128Ascii string) time.Time {
+    id128 := big.NewInt(0)
+    id128.SetString(id128Ascii, maxRadix)
+    return o.ExtractTime128(id128)
 }
 
 // Id128 generates a 128-bit id.
@@ -153,5 +199,5 @@ func (o *Olaf) Id128Hex() string {
 
 // Id128Ascii generates a 128-bit id as an ascii string (base 36).
 func (o *Olaf) Id128Ascii() string {
-    return o.Id128().Text(36)
+    return o.Id128().Text(maxRadix)
 }
