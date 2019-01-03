@@ -1,6 +1,10 @@
 // Package olaf provides methods to generate unique ID using Twitter Snowflake algorithm.
 package olaf
 
+// Golang implementation of Twitter Snowflake.
+// #author Thanh Nguyen <btnguyen2k@gmail.com>
+// #version 0.1.0
+
 import (
     "math/big"
     "runtime"
@@ -9,13 +13,6 @@ import (
     "sync/atomic"
     "time"
 )
-
-/*
- * Golang implementation of Twitter Snowflake.
- *
- * #author Thanh Nguyen <btnguyen2k@gmail.com>
- * #version 0.1.0
- */
 
 // Twitter snowflake's epoch is set to 2019-01-01 00:00:00 UTC
 // You may customize this to set a different epoch for your application.
