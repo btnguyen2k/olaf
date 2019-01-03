@@ -1,3 +1,18 @@
+# Olaf
+
+Golang implementation of Twitter Snowflake.
+
+## Getting Started
+
+### Install Package
+
+```
+go get github.com/btnguyen2k/olaf
+```
+
+### Usage
+
+```go
 package main
 
 import (
@@ -26,3 +41,17 @@ func main() {
     fmt.Println("ID 128-bit (hex)  : ", id128Hex, " / Timestamp: ", o.ExtractTime128Hex(id128Hex))
     fmt.Println("ID 128-bit (ascii): ", id128Ascii, " / Timestamp: ", o.ExtractTime128Ascii(id128Ascii))
 }
+```
+
+## History
+
+Current version: `0.1.0`.
+
+### 2019-01-03 - v0.1.0
+
+First release:
+
+- Generate 64-bit and 128-bit IDs:
+  - Support formats: `integer`, `hex-string` (base 16) and `ascii-string` (base 36).
+  - Custom epoch (64-bit ID only).
+- Extract the time metadata from generated ID.
