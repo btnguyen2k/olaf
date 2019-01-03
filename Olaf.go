@@ -104,7 +104,7 @@ func (o *Olaf) Id64() uint64 {
 	sequence := int64(0)
 	for done := false; !done; {
 		done = true
-		for ; timestamp < o.Timestamp; {
+		for timestamp < o.Timestamp {
 			timestamp = WaitTillNextMillisec(timestamp)
 		}
 		if timestamp == o.Timestamp {
@@ -167,7 +167,7 @@ func (o *Olaf) Id128() *big.Int {
 	sequence := int64(0)
 	for done := false; !done; {
 		done = true
-		for ; timestamp < o.Timestamp; {
+		for timestamp < o.Timestamp {
 			timestamp = WaitTillNextMillisec(timestamp)
 		}
 		if timestamp == o.Timestamp {
