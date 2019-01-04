@@ -2,6 +2,7 @@
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/btnguyen2k/olaf)](https://goreportcard.com/report/github.com/btnguyen2k/olaf)
 [![cover.run](https://cover.run/go/github.com/btnguyen2k/olaf.svg?style=flat&tag=golang-1.10)](https://cover.run/go?tag=golang-1.10&repo=github.com%2Fbtnguyen2k%2Folaf)
+[![GoDoc](https://godoc.org/github.com/btnguyen2k/olaf?status.svg)](https://godoc.org/github.com/btnguyen2k/olaf)
 
 Golang implementation of Twitter Snowflake.
 
