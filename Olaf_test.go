@@ -37,7 +37,7 @@ func TestNewOlaf(t *testing.T) {
 	if o.NodeID != nodeId {
 		t.Errorf("Invalid Olaf instance, expected NodeId: %d, actual NodeId: %d.", nodeId, o.NodeID)
 	}
-	if o.Epoch != olaf.Epoch {
+	if o.Epoch != Epoch {
 		t.Errorf("Invalid Olaf instance, expected Epoch: %d, actual Epoch: %d.", olaf.Epoch, o.Epoch)
 	}
 }
