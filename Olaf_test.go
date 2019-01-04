@@ -1,6 +1,7 @@
 package olaf
 
 import (
+	"github.com/btnguyen2k/olaf"
 	"math/big"
 	"testing"
 	"time"
@@ -27,6 +28,29 @@ func TestWaitTillNextMillisec(t *testing.T) {
 	}
 	if endMs < nextMs {
 		t.Errorf("Next milliseconds must not greater than now, nextMs: %d, nowMs: %d.", nextMs, endMs)
+	}
+}
+
+func TestNewOlaf(t *testing.T) {
+	nodeId := int64(1981)
+	o := NewOlaf(nodeId)
+	if o.NodeID != nodeId {
+		t.Errorf("Invalid Olaf instance, expected NodeId: %d, actual NodeId: %d.", nodeId, o.NodeID)
+	}
+	if o.Epoch != olaf.Epoch {
+		t.Errorf("Invalid Olaf instance, expected Epoch: %d, actual Epoch: %d.", olaf.Epoch, o.Epoch)
+	}
+}
+
+func TestNewOlafWithEpoch(t *testing.T) {
+	nodeId := int64(1981)
+	epoch := int64(123456789)
+	o := NewOlafWithEpoch(nodeId, epoch)
+	if o.NodeID != nodeId {
+		t.Errorf("Invalid Olaf instance, expected NodeId: %d, actual NodeId: %d.", nodeId, o.NodeID)
+	}
+	if o.Epoch != epoch {
+		t.Errorf("Invalid Olaf instance, expected Epoch: %d, actual Epoch: %d.", epoch, o.Epoch)
 	}
 }
 
