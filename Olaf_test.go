@@ -1,7 +1,6 @@
 package olaf
 
 import (
-	"github.com/btnguyen2k/olaf"
 	"math/big"
 	"testing"
 	"time"
@@ -38,7 +37,7 @@ func TestNewOlaf(t *testing.T) {
 		t.Errorf("Invalid Olaf instance, expected NodeId: %d, actual NodeId: %d.", nodeId, o.NodeID)
 	}
 	if o.Epoch != Epoch {
-		t.Errorf("Invalid Olaf instance, expected Epoch: %d, actual Epoch: %d.", olaf.Epoch, o.Epoch)
+		t.Errorf("Invalid Olaf instance, expected Epoch: %d, actual Epoch: %d.", Epoch, o.Epoch)
 	}
 }
 

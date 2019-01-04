@@ -1,9 +1,7 @@
 // Package olaf provides methods to generate unique ID using Twitter Snowflake algorithm.
-package olaf
-
-// Golang implementation of Twitter Snowflake.
 // #author Thanh Nguyen <btnguyen2k@gmail.com>
 // #version 0.1.0
+package olaf
 
 import (
 	"math/big"
