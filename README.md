@@ -1,5 +1,7 @@
 # Olaf
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/btnguyen2k/olaf)](https://goreportcard.com/report/github.com/btnguyen2k/olaf)
+
 Golang implementation of Twitter Snowflake.
 
 ## Getting Started
