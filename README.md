@@ -3,6 +3,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/btnguyen2k/olaf)](https://goreportcard.com/report/github.com/btnguyen2k/olaf)
 [![cover.run](https://cover.run/go/github.com/btnguyen2k/olaf.svg?style=flat&tag=golang-1.10)](https://cover.run/go?tag=golang-1.10&repo=github.com%2Fbtnguyen2k%2Folaf)
 [![GoDoc](https://godoc.org/github.com/btnguyen2k/olaf?status.svg)](https://godoc.org/github.com/btnguyen2k/olaf)
+[![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
 
 Golang implementation of Twitter Snowflake.
 
@@ -47,72 +48,10 @@ func main() {
 }
 ```
 
-## Methods
+## Document - GoDoc
 
-`func NewOlaf(nodeId int64) *Olaf`
+See [GoDoc](https://github.com/btnguyen2k/olaf)
 
-Create a new `Olaf` with default epoch.
-The default epoch is `1546300800000` which is UNIX timestamp in milliseconds of `2019-01-01 00:00:00 UTC`.
-
-`func NewOlafWithEpoch(nodeId int64, epoch int64) *Olaf`
-
-Create a new Olaf with custom epoch.
-
-`func UnixMilliseconds() int64`
-
-Return current UNIX timestamp in milliseconds.
-
-`func WaitTillNextMillisec(currentMillisec int64) int64`
-
-Wait till clock moves to the next millisecond and return it.
-
-`func (o *Olaf) ExtractTime64(id64 uint64) time.Time`
-
-Extract time metadata from a 64-bit id.
-
-`func (o *Olaf) ExtractTime64Hex(id64Hex string) time.Time`
-
-Extracts time metadata from a 64-bit id in hex (base 16) format.
-
-`func (o *Olaf) ExtractTime64Ascii(id64Ascii string) time.Time`
-
-Extract time metadata from a 64-bit id in ascii (base 36) format.
-
-`func (o *Olaf) Id64() uint64`
-
-Generate a 64-bit id.
-
-`func (o *Olaf) Id64Hex() string`
-
-Generate a 64-bit id as a hex (base 16) string.
-
-`func (o *Olaf) Id64Ascii() string`
-
-Generate a 64-bit id as an ascii string (base 36).
-
-`func (o *Olaf) ExtractTime128(id128 *big.Int) time.Time`
-
-Extract time metadata from a 128-bit id.
-
-`func (o *Olaf) ExtractTime128Hex(id128Hex string) time.Time`
-
-Extract time metadata from a 128-bit id in hex (base 16) format.
-
-`func (o *Olaf) ExtractTime128Ascii(id128Ascii string) time.Time`
-
-Extract time metadata from a 128-bit id in ascii (base 36) format.
-
-`func (o *Olaf) Id128() *big.Int`
-
-Generate a 128-bit id.
-
-`func (o *Olaf) Id128Hex() string`
-
-Generate a 128-bit id as a hex (base 16) string.
-
-`func (o *Olaf) Id128Ascii() string`
-
-Generate a 128-bit id as an ascii (base 36) string.
 
 ## History
 
