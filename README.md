@@ -50,7 +50,7 @@ func main() {
 
 ## Document - GoDoc
 
-See [GoDoc](https://github.com/btnguyen2k/olaf)
+See [GoDoc](https://godoc.org/github.com/btnguyen2k/olaf).
 
 
 ## History
