@@ -1,3 +1,5 @@
+**Since 10-Apr-2019: Olaf has been merged as a sub-module of [btnguyen2k/consu](https://github.com/btnguyen2k/consu)**
+
 # Olaf
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/btnguyen2k/olaf)](https://goreportcard.com/report/github.com/btnguyen2k/olaf)
@@ -6,8 +8,6 @@
 [![Mentioned in Awesome Go](https://awesome.re/mentioned-badge.svg)](https://github.com/avelino/awesome-go)
 
 Golang implementation of Twitter Snowflake.
-
-**Olaf has been merged as a sub-module of [btnguyen2k/consu](https://github.com/btnguyen2k/consu)**
 
 ## Getting Started
 
