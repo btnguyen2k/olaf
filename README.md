@@ -7,6 +7,8 @@
 
 Golang implementation of Twitter Snowflake.
 
+**Olaf has been merged as a sub-module of [btnguyen2k/consu](https://github.com/btnguyen2k/consu)**
+
 ## Getting Started
 
 ### Install Package
